@@ -12,8 +12,8 @@ async def show_settings(m: "types.Message"):
     if not user_data:
         await m.edit("Failed to fetch your data from database!")
         return
-    upload_as_doc = user_data.get("upload_as_doc", False)
-    caption = user_data.get("caption", None)
+    upload_as_doc = user_data.get("upload_as_doc", True)
+    caption = user_data.get("caption", True)
     apply_caption = user_data.get("apply_caption", True)
     thumbnail = user_data.get("thumbnail", None)
     buttons_markup = [
@@ -28,22 +28,6 @@ async def show_settings(m: "types.Message"):
         [types.InlineKeyboardButton(f"{'Change' if thumbnail else 'Set'} Thumbnail",
                                     callback_data="setThumbnail")]
     ]
-    reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
     if thumbnail:
         buttons_markup.append([types.InlineKeyboardButton("Show Thumbnail",
                                                           callback_data="showThumbnail")])
