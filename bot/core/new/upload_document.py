@@ -34,7 +34,7 @@ class UploadDocument:
         reply_to_message_id: int = None,
         schedule_date: int = None,
         reply_markup: Union[InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, ForceReply, None] = None,
-        status_message: str = "📤 Uploading as Document ..."
+        status_message: str = "📤 Uploading as File ..."
     ):
         """
         Advanced Document Uploader Function.
@@ -56,7 +56,7 @@ class UploadDocument:
 
         if not caption:
             caption = f"**File Name:** `{os.path.basename(document)}`" \
-                      "\n\n**@AH_RenameBot**"
+                      "\n\n**@SS_Renamer_Pro_Bot**"
         c_time = time.time()
         await self.send_document(
             chat_id=chat_id,
@@ -77,4 +77,4 @@ class UploadDocument:
                 c_time
             )
         )
-        await editable_message.edit("Uploaded Successfully!")
+        await editable_message.edit("Uploaded Successfully ☺!")
