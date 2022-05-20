@@ -113,7 +113,7 @@ class UploadVideo:
             thumbnail = thumb
         if not caption:
             caption = f"**File Name:** `{os.path.basename(video)}`" \
-                      "\n\n**@AH_RenameBot**"
+                      "\n\n**@SS_Renamer_Pro_Bot**"
         c_time = time.time()
         await self.send_video(
             chat_id=chat_id,
@@ -139,4 +139,4 @@ class UploadVideo:
                 c_time
             )
         )
-        await editable_message.edit("Uploaded Successfully!")
+        await editable_message.edit("File Uploaded Successfully ☺!")
