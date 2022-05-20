@@ -11,22 +11,6 @@ from bot.core.file_info import (
 )
 from bot.core.display import humanbytes
 from bot.core.handlers.settings import show_settings
-
-
-@Client.on_callback_query()
-    elif query.data == "start":
-        buttons = [[
-            InlineKeyboardButton('+ Add Me To Group +', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('📢 OTT Channel 📢', url='https://t.me/SS_OTT_Movie_Releases'),
-            InlineKeyboardButton('📽 Theater Print Channel 📽', url='https://t.me/+mBEx026EYkxhYjU1')
-            ],[      
-            InlineKeyboardButton('HELP', callback_data='help'),
-            InlineKeyboardButton('CONTACT ME', url='https://t.me/SS_Admin_Chat_bot'),
-            InlineKeyboardButton('ABOUT', callback_data='about')
-            ],[
-            InlineKeyboardButton('👥 Movie Search Group 👥', url='https://t.me/movieclub308')
-        ]]
 async def cb_handlers(c: Client, cb: "types.CallbackQuery"):
     if cb.data == "showSettings":
         await cb.answer()
